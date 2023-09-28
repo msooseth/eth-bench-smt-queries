@@ -1,4 +1,4 @@
-(PEq
+;(PEq
 ;  (And
 ;    0x1
 ;    0x2
@@ -24,15 +24,17 @@
 ;  )
 ;  0x0
 ;)
-;(PEq
-;  (LT
-;    0x0
-;    (And
-;      0xff00
-;      (Var "arg1")
+;(PNeg
+;  (PEq
+;    (LT
+;      0x0
+;      (And
+;        0xff00
+;        (Var "arg1")
+;      )
 ;    )
+;    0x0
 ;  )
-;  0x0
 ;)
 ;(PNeg
 ;  (PEq
@@ -128,15 +130,17 @@
 ;  )
 ;  0x10000000000000000
 ;)
-;(PEq
-;  (LT
-;    0x0
-;    (And
-;      0xff00
-;      (Var "arg1")
+;(PNeg
+;  (PEq
+;    (LT
+;      0x0
+;      (And
+;        0xff00
+;        (Var "arg1")
+;      )
 ;    )
+;    0x0
 ;  )
-;  0x0
 ;)
 ;(PNeg
 ;  (PEq
@@ -424,7 +428,7 @@
 (assert (= (bvand (_ bv1 256) (_ bv2 256)) (_ bv2 256)))
 (assert (bvult (max (_ bv36 256) txdata_length) (_ bv18446744073709551616 256)))
 (assert (= (ite (bvult (_ bv0 256) (bvand (_ bv255 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
-(assert (= (ite (bvult (_ bv0 256) (bvand (_ bv65280 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
+(assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv65280 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv16711680 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv4278190080 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (= (ite (bvult (_ bv0 256) (bvand (_ bv1095216660480 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
@@ -434,7 +438,7 @@
 (assert (= (ite (bvult (_ bv0 256) (bvand (_ bv4703919738795935662080 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
 (assert (= (bvand (_ bv1204203453131759529492480 256) arg1) (_ bv0 256)))
 (assert (bvult (max (_ bv36 256) txdata_length) (_ bv18446744073709551616 256)))
-(assert (= (ite (bvult (_ bv0 256) (bvand (_ bv65280 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
+(assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv65280 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv16711680 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv4278190080 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (ite (bvult (_ bv0 256) (bvand (_ bv280375465082880 256) arg1)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))

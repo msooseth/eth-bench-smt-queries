@@ -1,10 +1,3 @@
-(PEq
-;  (And
-;    0xd95322745865822719164b1fc167930754c248de0001
-;    0x2
-;  )
-;  0x2
-;)
 ;(PLT
 ;  (Max
 ;    0x64
@@ -53,11 +46,57 @@
 ;    )
 ;  )
 ;)
-;(PEq
-;  (Var "arg3")
-;  (Sub
-;    (Add
-;      (Var "arg3")
+;(PNeg
+;  (PEq
+;    (Var "arg3")
+;    (Sub
+;      (Add
+;        (Var "arg3")
+;        (SLoad
+;          slot:
+;            (Keccak
+;              (CopySlice
+;                srcOffset: 0x0
+;                dstOffset: 0x0
+;                size:      0x40
+;                src:
+;                  (WriteWord
+;                    idx:
+;                      0x0
+;                    val:
+;                      (WAddr
+;                        (SymAddr "arg2")
+;                      )
+;                  )
+;                  (ConcreteBuf
+;                    Length: 64 (0x40) bytes
+;                    0000:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0010:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0020:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0030:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 03   ................
+;                  )
+;              )
+;              (ConcreteBuf "")
+;            )
+;          storage:
+;            (SStore
+;              slot:
+;                0x157e0df9dc0f70ddc5c5bc34da33383cf3486ecc180b8e526ee515a7a2dc9af5
+;              val:
+;                (Sub
+;                  (Var "arg1")
+;                  (Var "arg3")
+;                )
+;            )
+;            (ConcreteStore
+;              vals:
+;                (0x0,0x544f4b454e00000000000000000000000000000000000000000000000000000a)
+;                (0x1,0x544b4e0000000000000000000000000000000000000000000000000000000006)
+;                (0x2,0x0)
+;                (0x6,0xacab)
+;            )
+;        )
+;      )
 ;      (SLoad
 ;        slot:
 ;          (Keccak
@@ -89,10 +128,7 @@
 ;            slot:
 ;              0x157e0df9dc0f70ddc5c5bc34da33383cf3486ecc180b8e526ee515a7a2dc9af5
 ;            val:
-;              (Sub
-;                (Var "arg1")
-;                (Var "arg3")
-;              )
+;              (Var "arg1")
 ;          )
 ;          (ConcreteStore
 ;            vals:
@@ -102,47 +138,6 @@
 ;              (0x6,0xacab)
 ;          )
 ;      )
-;    )
-;    (SLoad
-;      slot:
-;        (Keccak
-;          (CopySlice
-;            srcOffset: 0x0
-;            dstOffset: 0x0
-;            size:      0x40
-;            src:
-;              (WriteWord
-;                idx:
-;                  0x0
-;                val:
-;                  (WAddr
-;                    (SymAddr "arg2")
-;                  )
-;              )
-;              (ConcreteBuf
-;                Length: 64 (0x40) bytes
-;                0000:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
-;                0010:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
-;                0020:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
-;                0030:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 03   ................
-;              )
-;          )
-;          (ConcreteBuf "")
-;        )
-;      storage:
-;        (SStore
-;          slot:
-;            0x157e0df9dc0f70ddc5c5bc34da33383cf3486ecc180b8e526ee515a7a2dc9af5
-;          val:
-;            (Var "arg1")
-;        )
-;        (ConcreteStore
-;          vals:
-;            (0x0,0x544f4b454e00000000000000000000000000000000000000000000000000000a)
-;            (0x1,0x544b4e0000000000000000000000000000000000000000000000000000000006)
-;            (0x2,0x0)
-;            (0x6,0xacab)
-;        )
 ;    )
 ;  )
 ;)
@@ -322,6 +317,109 @@
 ;    )
 ;  )
 ;  0x10000000000000000
+;)
+;(PNeg
+;  (PEq
+;    (Var "arg3")
+;    (Sub
+;      (Add
+;        (Var "arg3")
+;        (SLoad
+;          slot:
+;            (Keccak
+;              (CopySlice
+;                srcOffset: 0x0
+;                dstOffset: 0x0
+;                size:      0x40
+;                src:
+;                  (WriteWord
+;                    idx:
+;                      0x0
+;                    val:
+;                      (WAddr
+;                        (SymAddr "arg2")
+;                      )
+;                  )
+;                  (ConcreteBuf
+;                    Length: 64 (0x40) bytes
+;                    0000:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0010:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0020:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                    0030:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 03   ................
+;                  )
+;              )
+;              (ConcreteBuf "")
+;            )
+;          storage:
+;            (SStore
+;              slot:
+;                0x157e0df9dc0f70ddc5c5bc34da33383cf3486ecc180b8e526ee515a7a2dc9af5
+;              val:
+;                (Sub
+;                  (Var "arg1")
+;                  (Var "arg3")
+;                )
+;            )
+;            (ConcreteStore
+;              vals:
+;                (0x0,0x544f4b454e00000000000000000000000000000000000000000000000000000a)
+;                (0x1,0x544b4e0000000000000000000000000000000000000000000000000000000006)
+;                (0x2,0x0)
+;                (0x6,0xacab)
+;            )
+;        )
+;      )
+;      (SLoad
+;        slot:
+;          (Keccak
+;            (CopySlice
+;              srcOffset: 0x0
+;              dstOffset: 0x0
+;              size:      0x40
+;              src:
+;                (WriteWord
+;                  idx:
+;                    0x0
+;                  val:
+;                    (WAddr
+;                      (SymAddr "arg2")
+;                    )
+;                )
+;                (ConcreteBuf
+;                  Length: 64 (0x40) bytes
+;                  0000:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                  0010:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                  0020:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00   ................
+;                  0030:   00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 03   ................
+;                )
+;            )
+;            (ConcreteBuf "")
+;          )
+;        storage:
+;          (SStore
+;            slot:
+;              0x157e0df9dc0f70ddc5c5bc34da33383cf3486ecc180b8e526ee515a7a2dc9af5
+;            val:
+;              (Var "arg1")
+;          )
+;          (ConcreteStore
+;            vals:
+;              (0x0,0x544f4b454e00000000000000000000000000000000000000000000000000000a)
+;              (0x1,0x544b4e0000000000000000000000000000000000000000000000000000000006)
+;              (0x2,0x0)
+;              (0x6,0xacab)
+;          )
+;      )
+;    )
+;  )
+;)
+;(PNeg
+;  (PEq
+;    0xacab
+;    (WAddr
+;      (SymAddr "arg2")
+;    )
+;  )
 ;)
 ;
 ; logic
@@ -574,16 +672,17 @@
 (assert (= (keccak (store (store (store (store (store ((as const Buf) #b00000000) (_ bv0 256) (_ bv84 8)) (_ bv1 256) (_ bv79 8)) (_ bv2 256) (_ bv75 8)) (_ bv3 256) (_ bv69 8)) (_ bv4 256) (_ bv78 8))) (_ bv68045535224698564919508891548816079140229906170606430517752058532450078111188 256)))
 ; read assumptions
 
-(assert (= (bvand (_ bv81310840293177857578059886534272399481609639386021889 256) (_ bv2 256)) (_ bv2 256)))
 (assert (bvult (max (_ bv100 256) txdata_length) (_ bv18446744073709551616 256)))
 (assert (= (_ bv9721289009314955157528189709118642441697326712694180562838744657095391222517 256) (keccak (store (store (store ((as const Buf) #b00000000) (_ bv30 256) (_ bv172 8)) (_ bv31 256) (_ bv171 8)) (_ bv63 256) (_ bv3 8)))))
 (assert (= (_ bv77470931238125645914482047374209318913436782836918718225408196512996703784665 256) (keccak (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store (store ((as const Buf) #b00000000) (_ bv0 256) (_ bv139 8)) (_ bv1 256) (_ bv115 8)) (_ bv2 256) (_ bv195 8)) (_ bv3 256) (_ bv198 8)) (_ bv4 256) (_ bv155 8)) (_ bv5 256) (_ bv184 8)) (_ bv6 256) (_ bv254 8)) (_ bv7 256) (_ bv61 8)) (_ bv8 256) (_ bv81 8)) (_ bv9 256) (_ bv46 8)) (_ bv10 256) (_ bv204 8)) (_ bv11 256) (_ bv76 8)) (_ bv12 256) (_ bv247 8)) (_ bv13 256) (_ bv89 8)) (_ bv14 256) (_ bv204 8)) (_ bv15 256) (_ bv121 8)) (_ bv16 256) (_ bv35 8)) (_ bv17 256) (_ bv159 8)) (_ bv18 256) (_ bv123 8)) (_ bv19 256) (_ bv23 8)) (_ bv20 256) (_ bv155 8)) (_ bv21 256) (_ bv15 8)) (_ bv22 256) (_ bv250 8)) (_ bv23 256) (_ bv202 8)) (_ bv24 256) (_ bv169 8)) (_ bv25 256) (_ bv167 8)) (_ bv26 256) (_ bv93 8)) (_ bv27 256) (_ bv82 8)) (_ bv28 256) (_ bv43 8)) (_ bv29 256) (_ bv57 8)) (_ bv30 256) (_ bv64 8)) (_ bv31 256) (_ bv15 8)) (_ bv32 256) (_ bv150 8)) (_ bv33 256) (_ bv112 8)) (_ bv34 256) (_ bv104 8)) (_ bv35 256) (_ bv121 8)) (_ bv36 256) (_ bv210 8)) (_ bv37 256) (_ bv156 8)) (_ bv38 256) (_ bv36 8)) (_ bv39 256) (_ bv142 8)) (_ bv40 256) (_ bv223 8)) (_ bv41 256) (_ bv178 8)) (_ bv42 256) (_ bv162 8)) (_ bv43 256) (_ bv86 8)) (_ bv44 256) (_ bv58 8)) (_ bv45 256) (_ bv138 8)) (_ bv46 256) (_ bv157 8)) (_ bv47 256) (_ bv87 8)) (_ bv48 256) (_ bv28 8)) (_ bv49 256) (_ bv73 8)) (_ bv50 256) (_ bv99 8)) (_ bv51 256) (_ bv76 8)) (_ bv52 256) (_ bv15 8)) (_ bv53 256) (_ bv130 8)) (_ bv54 256) (_ bv1 8)) (_ bv55 256) (_ bv62 8)) (_ bv56 256) (_ bv111 8)) (_ bv57 256) (_ bv90 8)) (_ bv58 256) (_ bv124 8)) (_ bv59 256) (_ bv222 8)) (_ bv60 256) (_ bv115 8)) (_ bv61 256) (_ bv157 8)) (_ bv62 256) (_ bv53 8)) (_ bv63 256) (_ bv212 8)) (_ bv64 256) (_ bv200 8)) (_ bv65 256) (_ bv158 8)) (_ bv66 256) (_ bv253 8)) (_ bv67 256) (_ bv170 8)) (_ bv68 256) (_ bv84 8)) (_ bv69 256) (_ bv192 8)) (_ bv70 256) (_ bv242 8)) (_ bv71 256) (_ bv12 8)) (_ bv72 256) (_ bv122 8)) (_ bv73 256) (_ bv223 8)) (_ bv74 256) (_ bv97 8)) (_ bv75 256) (_ bv40 8)) (_ bv76 256) (_ bv130 8)) (_ bv77 256) (_ bv223 8)) (_ bv78 256) (_ bv9 8)) (_ bv79 256) (_ bv80 8)) (_ bv80 256) (_ bv245 8)) (_ bv81 256) (_ bv169 8)) (_ bv82 256) (_ bv81 8)) (_ bv83 256) (_ bv99 8)) (_ bv84 256) (_ bv126 8)) (_ bv85 256) (_ bv3 8)) (_ bv86 256) (_ bv7 8)) (_ bv87 256) (_ bv205 8)) (_ bv88 256) (_ bv203 8)) (_ bv89 256) (_ bv76 8)) (_ bv90 256) (_ bv103 8)) (_ bv91 256) (_ bv47 8)) (_ bv92 256) (_ bv41 8)) (_ bv93 256) (_ bv139 8)) (_ bv94 256) (_ bv139 8)) (_ bv95 256) (_ bv198 8)) (_ bv127 256) (_ bv99 8)) (_ bv140 256) (_ bv217 8)) (_ bv141 256) (_ bv83 8)) (_ bv142 256) (_ bv34 8)) (_ bv143 256) (_ bv116 8)) (_ bv144 256) (_ bv88 8)) (_ bv145 256) (_ bv101 8)) (_ bv146 256) (_ bv130 8)) (_ bv147 256) (_ bv39 8)) (_ bv148 256) (_ bv25 8)) (_ bv149 256) (_ bv22 8)) (_ bv150 256) (_ bv75 8)) (_ bv151 256) (_ bv31 8)) (_ bv152 256) (_ bv193 8)) (_ bv153 256) (_ bv103 8)) (_ bv154 256) (_ bv147 8)) (_ bv155 256) (_ bv7 8)) (_ bv156 256) (_ bv84 8)) (_ bv157 256) (_ bv194 8)) (_ bv158 256) (_ bv72 8)) (_ bv159 256) (_ bv222 8)))))
 (assert (= (_ bv68045535224698564919508891548816079140229906170606430517752058532450078111188 256) (keccak (store (store (store (store (store ((as const Buf) #b00000000) (_ bv0 256) (_ bv84 8)) (_ bv1 256) (_ bv79 8)) (_ bv2 256) (_ bv75 8)) (_ bv3 256) (_ bv69 8)) (_ bv4 256) (_ bv78 8)))))
-(assert (= arg3 (bvsub (bvadd arg3 (select store2 (keccak buf1))) (select store3 (keccak buf1)))))
+(assert (not (= arg3 (bvsub (bvadd arg3 (select store2 (keccak buf1))) (select store3 (keccak buf1))))))
 (assert (not (= (ite (= (ite (bvult (bvadd arg3 (select store2 (keccak buf1))) (bvsub (bvadd arg3 (select store2 (keccak buf1))) (select store3 (keccak buf1)))) (_ bv1 256) (_ bv0 256)) (_ bv0 256)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (not (= (_ bv44203 256) (concat (_ bv0 96) symaddr_arg2 ))))
 (assert (not (= (ite (= (ite (bvult arg1 (bvsub arg1 arg3)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 (assert (bvult (max (_ bv100 256) txdata_length) (_ bv18446744073709551616 256)))
+(assert (not (= arg3 (bvsub (bvadd arg3 (select store2 (keccak buf1))) (select store3 (keccak buf1))))))
+(assert (not (= (_ bv44203 256) (concat (_ bv0 96) symaddr_arg2 ))))
 
 
 (check-sat)

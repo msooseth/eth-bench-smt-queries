@@ -1,4 +1,4 @@
-(PEq
+;(PEq
 ;  (And
 ;    0x1
 ;    0x2
@@ -14,21 +14,21 @@
 ;  )
 ;  0x10000000000000000
 ;)
+;(PEq
+;  (Xor
+;    0x69
+;    (Var "arg2")
+;  )
+;  0x0
+;)
 ;(PNeg
 ;  (PEq
 ;    (Xor
 ;      0x69
-;      (Var "arg2")
+;      (Var "arg1")
 ;    )
 ;    0x0
 ;  )
-;)
-;(PEq
-;  (Xor
-;    0x69
-;    (Var "arg1")
-;  )
-;  0x0
 ;)
 ;(PLT
 ;  (Max
@@ -270,8 +270,8 @@
 
 (assert (= (bvand (_ bv1 256) (_ bv2 256)) (_ bv2 256)))
 (assert (bvult (max (_ bv68 256) txdata_length) (_ bv18446744073709551616 256)))
-(assert (not (= (bvxor (_ bv105 256) arg2) (_ bv0 256))))
-(assert (= (bvxor (_ bv105 256) arg1) (_ bv0 256)))
+(assert (= (bvxor (_ bv105 256) arg2) (_ bv0 256)))
+(assert (not (= (bvxor (_ bv105 256) arg1) (_ bv0 256))))
 (assert (bvult (max (_ bv68 256) txdata_length) (_ bv18446744073709551616 256)))
 
 

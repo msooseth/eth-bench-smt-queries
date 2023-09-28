@@ -1,4 +1,11 @@
-(PLT
+;(PEq
+;  (And
+;    0x1
+;    0x2
+;  )
+;  0x2
+;)
+;(PLT
 ;  (Max
 ;    0x44
 ;    (BufLength
@@ -18,20 +25,6 @@
 ;    )
 ;  )
 ;  0x0
-;)
-;(PNeg
-;  (PEq
-;    (IsZero
-;      (LT
-;        (Add
-;          (Var "arg1")
-;          (Var "arg2")
-;        )
-;        (Var "arg1")
-;      )
-;    )
-;    0x0
-;  )
 ;)
 ;
 ; logic
@@ -262,9 +255,9 @@
 ; keccak computations
 ; read assumptions
 
+(assert (= (bvand (_ bv1 256) (_ bv2 256)) (_ bv2 256)))
 (assert (bvult (max (_ bv68 256) txdata_length) (_ bv18446744073709551616 256)))
 (assert (= (ite (= (ite (bvult (bvadd arg1 arg2) arg1) (_ bv1 256) (_ bv0 256)) (_ bv0 256)) (_ bv1 256) (_ bv0 256)) (_ bv0 256)))
-(assert (not (= (ite (= (ite (bvult (bvadd arg1 arg2) arg1) (_ bv1 256) (_ bv0 256)) (_ bv0 256)) (_ bv1 256) (_ bv0 256)) (_ bv0 256))))
 
 
 (check-sat)
