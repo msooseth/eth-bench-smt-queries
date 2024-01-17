@@ -8,12 +8,23 @@ nix-develop
 ./bench.py --tools=hevm-z3 -t 90
 ```
 
-e8a6f2485170 data was obtained via:
+`e8a6f2485170` data was obtained via:
 
 ```
 git clone https://github.com/eth-sc-comp/benchmarks
 cd benchmarks
 git checkout e8a6f2485170
 nix-develop
-./bench.py --tools=hevm-z3 -t 90 --dumpsmt
+./bench.py --tools=hevm-z3 -t 10 --dumpsmt
+```
+
+
+`e8a6f2485170-timeout50` data was obtained via:
+
+```
+git clone https://github.com/eth-sc-comp/benchmarks
+cd benchmarks
+git checkout e8a6f2485170
+nix-develop
+./bench.py --tools=hevm-z3 -t 50 --dumpsmt
 ```
