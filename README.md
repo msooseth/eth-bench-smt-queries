@@ -28,3 +28,6 @@ git checkout e8a6f2485170
 nix-develop
 ./bench.py --tools=hevm-z3 -t 50 --dumpsmt
 ```
+
+NOTE: some formulas may be incorrect due to timeouts. These can be filtered
+(and will be filtered in the future) via `cvc5 with --parse-only --strict-parsing`
